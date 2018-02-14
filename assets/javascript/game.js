@@ -4,8 +4,9 @@ var usersGuess = []; // Create an empty array that will capture the letters gues
 // Computer will select a random word from the array that has been provided wordList[]
 
 addEventListener("keyup", function(start) {
-    document.getElementById ("current-word").innerHTML = ("Current word: " + (wordList[Math.floor(Math.random() * wordList.length)] + " "));
-    console.log("current-word");
+    var randomWord = wordList[(Math.floor(Math.random() * wordList.length))];
+    document.getElementById ("current-word").innerHTML = ("Current word: " + randomWord);
+    console.log(randomWord);    
 });
 
 // To do: display selected word as blanks spaces that stay on the screen &
