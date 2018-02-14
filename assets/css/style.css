@@ -1,0 +1,16 @@
+body {
+    background: black;
+    color: white;
+}
+
+#first-row {
+    padding: 10px;
+    margin: 5px;
+}
+#second-row {
+    padding: 10px;
+    margin: 5px;
+}
+.col {
+    border: 2px dotted #fff;
+}
