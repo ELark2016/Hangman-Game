@@ -1,36 +1,30 @@
-var wordList = ["work", "home", "gym", "pool", "tree", "fruit", "apple", "banana"]; // Create list of words that can be randomly selected by the computer
-var usersGuess = []; // Create an empty array that will capture the letters guessed by the user
+var wordList = ["work", "home", "gym", "pool", "tree", "fruit", "apple", "banana"]; 
+var usersGuess = []; 
 
 // Computer will select a random word from the array that has been provided wordList[]
-
+var randomWord = wordList[(Math.floor(Math.random() * wordList.length))];
 addEventListener("keyup", function(start) {
-    var randomWord = wordList[(Math.floor(Math.random() * wordList.length))];
     document.getElementById ("current-word").innerHTML = ("Current word: " + randomWord);
-    console.log(randomWord);    
+    return randomWord;
 });
 
 // To do: display selected word as blanks spaces that stay on the screen &
-// To do: make sure that current word remains same until game ends
 
 document.addEventListener('keyup', function(event) {
     const keyName = event.key;
     usersGuess.push(keyName);
         function displayLetter(letter) {
             document.getElementByID("letters-guessed").innerHTML = (" " + usersGuess);
+            return usersGuess[i];
         }
-    console.log (usersGuess);
+       
+    
   });
 
 
 // To do: Figure out how to limit number of guesses to 6 using a loop
 
 // To Do: get letters to display to the screen
-//     function displayLetter(letter) {
-//     document.getElementByID("letters-guessed").innerHTML = (" " + usersGuess);   
-//         console.log("letter-guessed");
-// }
-
- 
 
 // insert if statements to display letters when guessed correctly
     /* --------

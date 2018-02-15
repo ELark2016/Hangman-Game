@@ -13,4 +13,5 @@ body {
 }
 .col {
     border: 2px dotted #fff;
+    height: auto;
 }
