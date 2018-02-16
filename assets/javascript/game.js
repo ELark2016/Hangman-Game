@@ -5,26 +5,25 @@ var usersGuess = [];
 var randomWord = wordList[(Math.floor(Math.random() * wordList.length))];
 addEventListener("keyup", function(start) {
     document.getElementById ("current-word").innerHTML = ("Current word: " + randomWord);
-    return randomWord;
 });
 
-// To do: display selected word as blanks spaces that stay on the screen &
+// To do: display randomly selected word as blanks '_'
 
 document.addEventListener('keyup', function(event) {
-    const keyName = event.key;
-    usersGuess.push(keyName);
-        function displayLetter(letter) {
-            document.getElementByID("letters-guessed").innerHTML = (" " + usersGuess);
-            return usersGuess[i];
-        }
-       
     
-  });
+    var letterGuessed = event.key;
+        
+        if (usersGuess.length < 7) {
+            usersGuess.push(letterGuessed);
+            document.getElementById ("letters-guessed").innerHTML = (usersGuess);
+            
+        }
+    });
+/*  To do: Figure out how to get rid of that first space/entry that is created when
+the game is started */   
+// usersGuess.shift(usersGuess[0]);
 
 
-// To do: Figure out how to limit number of guesses to 6 using a loop
-
-// To Do: get letters to display to the screen
 
 // insert if statements to display letters when guessed correctly
     /* --------
