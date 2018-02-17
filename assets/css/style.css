@@ -7,6 +7,11 @@ body {
     padding: 10px;
     margin: 5px;
 }
+#circus-banner {
+    height: 300px;
+    width: 900px;
+    
+}
 #second-row {
     padding: 10px;
     margin: 5px;

@@ -1,10 +1,13 @@
-var wordList = ["work", "home", "gym", "pool", "tree", "fruit", "apple", "banana"]; 
+var wordList = ["elephant", "tent", "tightrope", "lions", "popcorn", "peanuts"]; 
 var usersGuess = []; //Empty array used to capture letters entered by user
 
 // Computer will select a random word from the array that has been provided wordList[]
 var randomWord = wordList[(Math.floor(Math.random() * wordList.length))];
+
 addEventListener("keyup", function(start) {
-        var splitWord = randomWord.split("");document.getElementById ("current-word").innerHTML = splitWord;
+        var splitWord = randomWord.split("");
+        
+        document.getElementById ("current-word").innerHTML = splitWord;
         console.log(splitWord);     
 });
 
