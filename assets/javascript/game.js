@@ -23,7 +23,7 @@ document.addEventListener("keyup", function(event) {
     
         var letterGuessed = event.key;
             
-        if (usersGuess.length < 7 && gameStarted == false) {          
+        if (usersGuess.length < 7) {          
             usersGuess.push(letterGuessed);
             count --;
             document.getElementById ("letters-guessed").innerHTML = (usersGuess);
