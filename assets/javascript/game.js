@@ -1,11 +1,13 @@
 var wordList = ["work", "home", "gym", "pool", "tree", "fruit", "apple", "banana"]; 
-var usersGuess = []; 
+var usersGuess = []; //Empty array used to capture letters entered by user
 
 // Computer will select a random word from the array that has been provided wordList[]
 var randomWord = wordList[(Math.floor(Math.random() * wordList.length))];
 addEventListener("keyup", function(start) {
-    document.getElementById ("current-word").innerHTML = ("Current word: " + randomWord);
+        var splitWord = randomWord.split("");document.getElementById ("current-word").innerHTML = splitWord;
+        console.log(splitWord);     
 });
+
 
 // To do: display randomly selected word as blanks '_'
 
@@ -16,7 +18,6 @@ document.addEventListener('keyup', function(event) {
         if (usersGuess.length < 7) {
             usersGuess.push(letterGuessed);
             document.getElementById ("letters-guessed").innerHTML = (usersGuess);
-            
         }
     });
 /*  To do: Figure out how to get rid of that first space/entry that is created when
