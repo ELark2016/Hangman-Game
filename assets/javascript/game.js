@@ -1,33 +1,36 @@
 var wordList = ["elephant", "tent", "tightrope", "lions", "popcorn", "peanuts"]; 
 var usersGuess = []; //Empty array used to capture letters entered by user
+var hiddenWord = []; //Empty array used to mask the random word
+var count =7;
+var gameStarted;
 
 // Computer will select a random word from the array that has been provided wordList[]
 var randomWord = wordList[(Math.floor(Math.random() * wordList.length))];
 
-addEventListener("keyup", function(start) {
-        var splitWord = randomWord.split("");
-        
-        document.getElementById ("current-word").innerHTML = splitWord;
-        console.log(splitWord);     
-});
-
-
-// To do: display randomly selected word as blanks '_'
-
-document.addEventListener('keyup', function(event) {
+document.addEventListener("keyup", function(start) {
     
-    var letterGuessed = event.key;
+        var splitWord = randomWord.split("");
+                for (i = 0; i < splitWord.length; i++){
+                    hiddenWord.push("_");  
+                }
+                document.getElementById ("current-word").innerHTML = hiddenWord;
+                document.getElementById ("guesses-left").innerHTML = count;
+                
+        });  
         
-        if (usersGuess.length < 7) {
+
+document.addEventListener("keyup", function(event) {
+    
+        var letterGuessed = event.key;
+            
+        if (usersGuess.length < 7 && gameStarted == false) {          
             usersGuess.push(letterGuessed);
+            count --;
             document.getElementById ("letters-guessed").innerHTML = (usersGuess);
+            document.getElementById ("guesses-left").innerHTML = count;
         }
+        console.log(usersGuess);
     });
-/*  To do: Figure out how to get rid of that first space/entry that is created when
-the game is started */   
-// usersGuess.shift(usersGuess[0]);
-
-
 
 // insert if statements to display letters when guessed correctly
     /* --------
